@@ -1,10 +1,35 @@
-.navBarPersonalizado
+.navBarPersonalizado .menu a
 {
-    height: 15vh;
+    color: #5D58D7;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.divImg
+.navBarPersonalizado .menu a:hover
 {
-    height: 100%;
+    background-color: #5D58D7;
+    color: #ffffff;
 }
 
+.espacioDiv
+{
+    height: 20vh;
+}
+
+.input-radius
+{
+    border-radius: 5rem;
+    border-color: #5D58D7;
+}
+
+.input-radius::placeholder
+{
+    color: #5D58D7;
+}
+
+.btn-color
+{
+    background-color: #5D58D7;
+    padding: 2rem;
+    border-radius: 5rem;
+}

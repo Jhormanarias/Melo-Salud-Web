@@ -6,4 +6,14 @@
 .contenedor-form{
   background-color: #ffffff;
   height: 100vh;
+  width: 35%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.btn-color
+{
+  background-color: #5D58D7;
+  padding: 1rem;
+  border-radius: 5rem;
 }

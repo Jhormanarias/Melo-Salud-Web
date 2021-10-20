@@ -1,0 +1,9 @@
+
+.fondo{
+   background-image: url("../img/fondo.jpg");
+}
+
+.contenedor-form{
+  background-color: #ffffff;
+  height: 100vh;
+}

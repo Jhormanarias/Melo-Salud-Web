@@ -11,6 +11,12 @@
     color: #ffffff;
 }
 
+.titulo
+{
+    color: #5D58D7;
+    font-weight: bold;
+}
+
 .espacioDiv
 {
     height: 20vh;

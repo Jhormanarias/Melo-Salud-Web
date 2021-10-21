@@ -1,19 +1,45 @@
-
-.fondo{
-   background-image: url("../img/fondo.jpg");
+.fondo
+{
+  background-image: url("../img/fondo.jpg");
 }
 
-.contenedor-form{
+.imgLogo
+{
+  max-height: 42vh;
+}
+
+.titulo
+{
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #5D58D7;
+}
+
+.contenedor-form
+{
+  text-align: center;
   background-color: #ffffffec;
-  height: 100vh;
-  width: 35%;
+  min-height: 100vh;
   padding-left: 5%;
   padding-right: 5%;
 }
-
+ 
 .btn-color
 {
+  border: #5D58D7;
   background-color: #5D58D7;
   padding: 1rem;
   border-radius: 5rem;
+}
+
+.btn-color:hover
+{
+  border: #6b67df;
+  background-color: #6b67df;
+}
+
+.textbox-color
+{
+  border: 0rem;
+  border-bottom: solid 1px #33AADE;
 }

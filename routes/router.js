@@ -29,8 +29,6 @@ router.get('/register', (req, res)=>{
 router.post('/register', authController.register)
 router.post('/login', authController.login)
 router.get('/logout', authController.logout)
-router.get('/add', authController.logout)
-router.get('/Editt', authController.logout)
 
 //Ver datos
 router.get('/api', (req,res)=>{
@@ -46,7 +44,7 @@ router.get('/api', (req,res)=>{
 });
 
 //para consultar el personal
-router.get('/api/personal/:especialidad', (req, res) => {
+router.get('/api/personal/:especialidad', authController.isAuthenticated, (req, res) => {
     conexion.query('SELECT * FROM datos_personal where especialidad= ?',[req.params.especialidad] ,(error, dato)=> {
         if (error) {
             throw error;
@@ -58,7 +56,7 @@ router.get('/api/personal/:especialidad', (req, res) => {
 });
 
 //Insertar datos
-router.post('/add',(req,res)=>{
+router.post('/add',authController.isAuthenticated,(req,res)=>{
     let data = {
         "cedula" : req.body.cedula, 
         "nombre" :req.body.nombre,

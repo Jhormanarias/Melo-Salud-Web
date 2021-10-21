@@ -38,6 +38,7 @@ exports.register = async (req, res) => {
   }
 };
 
+//Procedimiento para logearnos
 exports.login = async (req, res) => {
   try {
     const user = req.body.user;
@@ -107,6 +108,7 @@ exports.login = async (req, res) => {
   }
 };
 
+//Proceso de autenticacion
 exports.isAuthenticated = async (req, res, next) => {
   if (req.cookies.jwt) {
     try {
@@ -134,6 +136,7 @@ exports.isAuthenticated = async (req, res, next) => {
   }
 };
 
+//Proceso de cierre de sesión
 exports.logout = (req, res) => {
   res.clearCookie("jwt");
   return res.redirect("/");

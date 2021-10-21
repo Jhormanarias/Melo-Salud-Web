@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const bcryptjs = require("bcryptjs");
 const conexion = require("../database/db");
 const { promisify } = require("util");
+const Swal = require('sweetalert2');
 
 //procedimiento para registrarnos
 exports.register = async (req, res) => {
@@ -18,7 +19,18 @@ exports.register = async (req, res) => {
         if (error) {
           console.log(error);
         }
-        res.redirect("/");
+        else
+        {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Usuario registrado',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          res.redirect("/");
+        }
+        
       }
     );
   } catch (error) {

@@ -8,6 +8,11 @@
   max-height: 42vh;
 }
 
+.imgLogo-register
+{
+  max-height: 28vh;
+}
+
 .titulo
 {
   font-size: 1.7rem;

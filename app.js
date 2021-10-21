@@ -1,32 +1,40 @@
-//invocamos a express
 const express = require('express')
+const dotenv = require('dotenv')
+const cookieParser = require('cookie-parser')
 
+const app = express()
 
-//objeto de la aplicacion
-const app = express(); // instacia del objeto express
- //prevenir el error cors de las cabeceras
-// seteamos el motor de plantillas
+//seteamos el motor de plantillas
 app.set('view engine', 'ejs')
 
-//seteamos la carpeta public para archivos estaticos
+//seteamos la carpeta public para archivos estáticos
 app.use(express.static('public'))
 
 //para procesar datos enviados desde forms
-app.use(express.urlencoded({extended:true}));
-app.use(express.json()); //activamos uso de json
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
 
-//invocamos a dotenv
-const dotenv = require('dotenv');
-dotenv.config({patch: './env/.env'})
-
-app.use('/', require('./routes/router'))
+//seteamos las variables de entorno
+dotenv.config({path: './env/.env'})
 
 //directorio public
-app.use('/resources', express.static('public'));
-app.use('/resources', express.static(__dirname + '/public'))
+// app.use('/resources', express.static('public'));
+// app.use('/resources', express.static(__dirname + '/public'))
 
-//activamos node en el puerto
-app.listen("4000", (req, res) => {
-  console.log("servidor funcionando en http://localhost:4000");
+//para poder trabajar con las cookies
+app.use(cookieParser())
+
+//llamar al router
+app.use('/', require('./routes/router'))
+
+//Para eliminar la cache 
+app.use(function(req, res, next) {
+    if (!req.user)
+        res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    next();
 });
 
+
+app.listen(3000, ()=>{
+    console.log('SERVER UP runnung in http://localhost:3000')
+})

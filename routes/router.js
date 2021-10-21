@@ -5,22 +5,30 @@ const conexion = require('../database/db');
 router.use(cors());
 router.use(express.json());
 
-
-router.get('/', (req, res)=>{
-    res.render('index')
+//router para las vistas
+router.get('/', authController.isAuthenticated, (req, res)=>{    
+    res.render('index', {user:req.user})
+})
+router.get('/add', authController.isAuthenticated,(req, res)=>{
+    res.render('addPersonal', {user:req.user})
 })
 
-router.get('/add', (req, res)=>{
-    res.render('addPersonal')
+router.get('/Editt', authController.isAuthenticated,(req, res)=>{
+    res.render('EditHorarios', {user:req.user})
 })
-
-router.get('/Editt', (req, res)=>{
-    res.render('EditHorarios')
-})
-
 router.get('/login', (req, res)=>{
-    res.render('login')
+    res.render('login', {alert:false})
 })
+router.get('/register', (req, res)=>{
+    res.render('register')
+})
+
+//router para los métodos del controller
+router.post('/register', authController.register)
+router.post('/login', authController.login)
+router.get('/logout', authController.logout)
+router.get('/add', authController.logout)
+router.get('/Editt', authController.logout)
 
 //Ver datos
 router.get('/api', (req,res)=>{

@@ -1,59 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <style>
-    body {  
-      /* display: flex; */
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color:rgba(255,255,255,0.95);
-    }
-    </style>
-    <title>Login con Node + JWT + MySQL</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors"/>
+    <meta name="generator" content="Hugo 0.88.1" />
+    <title>Registro</title>
+    <link rel="shortcut icon" href="img/logoIco.png" type="image/x-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/signin.css" />
   </head>
-  <body>
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 shadow-lg p-3 mb-5">
-
-          <div class="card border-primary">
-            <div class="card-header bg-primary text-white">Registrarse</div>
-            <div class="card-body text-primary">
-              <form action="/register" method="POST">        
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nombre completo</label>
-                    <input id="name" name="name" type="text" class="form-control" aria-describedby="emailHelp">              
-                </div>
-                <div class="mb-3">
-                    <label for="user" class="form-label">Cuenta de usuario</label>
-                    <input id="user" name="user" type="text" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="pass" class="form-label">Password</label>
-                    <input id="pass" name="pass" type="password" class="form-control">
-                </div>                            
-            </div>
-            <div class="card-footer bg-transparent border-primary">
-              <a href="/" type="button" class="btn btn-secondary">Cancelar</a>
-              <button type="submit" class="btn btn-primary">Registrar</button>
-            </div>
-            </form>
-          </div>   
-    
+  <body class="fondo"> <!--Aquí pongo una clase fondo pa ponerle la imagen-->
+    <!-- este contenedor tiene el formulario del login -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
         </div>
-    </div>
-</div>
+        <div class="col-md-4 contenedor-form shadow-lg">
+          <main class="form-signin">
+            <form action="/register" method="POST">
+              <img
+                class="img-fluid imgLogo-register"
+                src="img/MELO_SALUD.png"
+                alt="Logo"
+              />
+              <h1 class="h3 mb-3 fw-normal titulo">Registrate</h1>
 
- 
-    
-    <script src="js/bootstrap.bundle.min.js"></script>
+              <div class="form-floating">
+                <input
+                  type="user"
+                  class="form-control textbox-color"
+                  id="name"
+                  name="name"
+                  placeholder="Nombre completo"
+                  autocomplete="off"
+                />
+                <label for="floatingInput">Nombre completo</label>
+              </div>
+              <br>
+              <div class="form-floating">
+                <input
+                  type="user"
+                  class="form-control textbox-color"
+                  id="user"
+                  name="user"
+                  placeholder="Usuario"
+                  autocomplete="off"
+                />
+                <label for="floatingInput">Usuario</label>
+              </div>
+              <br />
+              <div class="form-floating">
+                <input
+                  type="password"
+                  class="form-control textbox-color"
+                  id="pass"
+                  name="pass"
+                  placeholder="Contrasena"
+                />
+                <label for="floatingPassword">Contraseña</label>
+              </div>
+              <br />
+              <div class="d-grid gap-2 mx-auto">
+                <button class="w-100 btn btn-lg btn-primary btn-color" type="submit">
+                  Registrarme
+                </button>
+                <a href="/" type="button" class="btn btn-secondary btn-color">Cancelar</a>
+              </div>  
+              <p class="mt-4 mb-2 text-muted p-copy-melo-footer">Melo Salud &copy; 2021</p>
+            </form>
+          </main>
+        </div>
+        <div class="col-md-4">
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous">
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

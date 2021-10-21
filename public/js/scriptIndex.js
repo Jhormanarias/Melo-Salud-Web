@@ -1,5 +1,5 @@
 //url 
-const url = 'http://localhost:3000/api/personal/';
+const url = 'http://localhost:3000/';
 
 //Boton Horarios en el home
 let btnHorarios = document.getElementById('btnHorarios');

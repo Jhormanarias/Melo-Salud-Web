@@ -31,7 +31,7 @@ router.post('/login', authController.login)
 router.get('/logout', authController.logout)
 
 //Ver datos
-router.get('/api', (req,res)=>{
+router.get('/', (req,res)=>{
     //consulta
     conexion.query('SELECT * FROM datos_personal', (error,datos)=>{
         if(error){
@@ -44,7 +44,7 @@ router.get('/api', (req,res)=>{
 });
 
 //para consultar el personal
-router.get('/api/personal/:especialidad', authController.isAuthenticated, (req, res) => {
+router.get('/:especialidad', authController.isAuthenticated, (req, res) => {
     conexion.query('SELECT * FROM datos_personal where especialidad= ?',[req.params.especialidad] ,(error, dato)=> {
         if (error) {
             throw error;
@@ -73,7 +73,6 @@ router.post('/add',authController.isAuthenticated,(req,res)=>{
         } else {           
             res.send(resultado);
         }
-
     })
 });
 

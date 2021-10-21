@@ -71,34 +71,39 @@
             <div class="row">
                 <div class="col-md-1">
                 </div>
-                <div class="col-md-10" id="tablaPdf">
-                    <h2>Horarios</h2>
-                    <table class="table table-hover tbl-personal" id="tablaDatos">
-                        <thead>
-                          <tr>
-                            <th scope="col">Cedula</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellidos</th>
-                            <th scope="col">Especialidad</th>
-                            <th scope="col">Fecha inicio</th>
-                            <th scope="col">Fecha fin</th>
-                            <th scope="col">Turno</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                          </tr>
-                        </tbody>
-                    </table>
-                    <button type="button" class="btn btn-primary btn-color" id="btnImprimir">
-                       Imprimir PDF
-                    </button>
-                </div>
+                <div class="col-md-10" id="tablaVisibleBtnVisible">
+                    <div class="tabla-pdf" id="tablaPdf">
+                        <h2 class="titulo-tabla">Horarios</h2>
+                        <table class="table table-hover tbl-personal" id="tablaDatos">
+                            <thead>
+                            <tr>
+                                <th scope="col">Cedula</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellidos</th>
+                                <th scope="col">Especialidad</th>
+                                <th scope="col">Fecha inicio</th>
+                                <th scope="col">Fecha fin</th>
+                                <th scope="col">Turno</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-5 d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-primary btn-color" id="btnImprimir">
+                            Imprimir PDF
+                        </button>
+                    </div> 
+                </div>   
                 <div class="col-md-1">
                 </div>
             </div>
         </div>
     </section>
+    <br><br><br>
 
 
     <!-- Bootsreap -->

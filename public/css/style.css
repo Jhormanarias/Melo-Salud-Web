@@ -44,3 +44,15 @@
 {
     width: 100%;
 }
+
+.titulo-tabla
+{
+    color: #5D58D7;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tabla-pdf
+{
+    align-items: center;
+}

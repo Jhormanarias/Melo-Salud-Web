@@ -10,21 +10,31 @@ let especialidadSolicitada = document.getElementById('especialidadSolicitada');
 //tabla
 let tablaDatos = document.getElementById('tablaDatos');
 
+//Div que no se muestra que tiene el titulo, la tabla y el boton imprimir
+let tablaVisibleBtnVisible = document.getElementById('tablaVisibleBtnVisible');
+
 //Inicializar la tabla que no se vea
+tablaVisibleBtnVisible.style.display = "none";
 tablaDatos.style.display = "none";
 
 //Mostrar datos de la Del personal y turnos según  servicios solicitados
 btnHorarios.addEventListener('click', ()=>{
   if(especialidadSolicitada.value=='Pediatría')
   {
+    tablaVisibleBtnVisible.style.display = "block";
+    tablaDatos.style.display = "block";
     traerDatosTabla();
   }
   if(especialidadSolicitada.value=='Psiquiatría')
   {
+    tablaVisibleBtnVisible.style.display = "block";
+    tablaDatos.style.display = "block";
     traerDatosTabla();
   }
   if(especialidadSolicitada.value=='Enfermería')
   {
+    tablaVisibleBtnVisible.style.display = "block";
+    tablaDatos.style.display = "block";
     traerDatosTabla();
   }
   if(especialidadSolicitada.value=='Selecciona una especialidad:')
@@ -76,10 +86,10 @@ function traerDatosTabla(nombreEspecialidad)
 };
 
 
-  // Escuchamos el click del botón
-  let btnImprimir = document.getElementById("btnImprimir");
-  btnImprimir.addEventListener("click", () => {
-    const elementoParaConvertir = document.getElementById("tablaPdf"); // Aquí puedes elegir cualquier elemento del DOM
+// Escuchamos el click del botón e imprimimos
+let btnImprimir = document.getElementById("btnImprimir");
+btnImprimir.addEventListener("click", () => {
+  const elementoParaConvertir = document.getElementById("tablaPdf"); // Aquí puedes elegir cualquier elemento del DOM
 
 // import { jsPDF } from "jspdf";
 // const doc = new jsPDF({
@@ -95,7 +105,7 @@ html2pdf()
         .set({
             pagebreak: ['css', 'legacy'],
             margin: 1.5,
-            filename: 'documento.pdf',
+            filename: 'Horarios.pdf',
             image: {
                 type: 'string',
                 quality: 0.98
@@ -113,6 +123,6 @@ html2pdf()
         .from(elementoParaConvertir)
         .save()
         .catch(err => console.log(err));
-  });
+});
 
 

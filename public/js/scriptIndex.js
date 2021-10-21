@@ -79,8 +79,19 @@ function traerDatosTabla(nombreEspecialidad)
   // Escuchamos el click del botón
   let btnImprimir = document.getElementById("btnImprimir");
   btnImprimir.addEventListener("click", () => {
-    const elementoParaConvertir = document.getElementById("tablaDatos"); // <-- Aquí puedes elegir cualquier elemento del DOM
-    html2pdf()
+    const elementoParaConvertir = document.getElementById("tablaPdf"); // Aquí puedes elegir cualquier elemento del DOM
+
+// import { jsPDF } from "jspdf";
+// const doc = new jsPDF({
+//   orientation: "landscape",
+//   unit: "in",
+//   format: [4, 2]
+// });
+// doc.setFontSize(40)
+// doc.text(35, 25, 'Paranyan loves jsPDF')
+// doc.html(elementoParaConvertir, 'table', 15, 40, 180, 160)
+// doc.save("a4.pdf");
+html2pdf()
         .set({
             pagebreak: ['css', 'legacy'],
             margin: 1.5,
@@ -98,7 +109,7 @@ function traerDatosTabla(nombreEspecialidad)
                 format: "a3",
                 orientation: 'portrait' // landscape o portrait
             }
-        })
+        }) 
         .from(elementoParaConvertir)
         .save()
         .catch(err => console.log(err));

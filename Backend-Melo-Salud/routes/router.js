@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-// const authcontroller = require('../controllers/AuthControllers')
+const authcontroller = require('../controllers/AuthControllers')
 
 //router par alas vistas
 router.get('/', (req, res)=>{

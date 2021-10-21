@@ -22,6 +22,6 @@ router.get('/login', (req, res)=>{
 
 
 //router para el controller
-/* router.post('/add', authcontroller.add) */
+router.post('/add', authcontroller.add)
 
 module.exports = router

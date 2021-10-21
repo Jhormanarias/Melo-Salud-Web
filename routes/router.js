@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const cors = require('cors');
-const conexion = require('../database/db');
-router.use(cors());
-router.use(express.json());
+//const cors = require('cors');
+//const conexion = require('../database/db');
+// router.use(cors());
+// router.use(express.json());
+
+const authController = require('../controllers/AuthControllers')
 
 //router para las vistas
 router.get('/', authController.isAuthenticated, (req, res)=>{    

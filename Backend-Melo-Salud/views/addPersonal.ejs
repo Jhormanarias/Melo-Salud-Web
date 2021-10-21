@@ -82,17 +82,12 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input 
-                            type="text" 
-                            class="form-control textbox-color" 
-                            id="Especialidades"
-                            name="Especialidades"
-                            placeholder="Especialidades: "
-                            autocomplete="off" 
-                            />
-                            <label for="floatingInput">
-                                Especialidades:
-                            </label>
+                            <select class="form-select textbox-color" aria-label="Default select example">
+                                <option selected>Selecciona una especialidad:</option>
+                                <option value="pediatria">Pediatría</option>
+                                <option value="psiquiatria">Psiquiatría</option>
+                                <option value="enfermeria">Enfermería</option>
+                            </select>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -130,7 +125,7 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input 
-                                    type="text" 
+                                    type="time" 
                                     class="form-control textbox-color" 
                                     id="Horainicio"
                                     name="Horainicio"
@@ -145,7 +140,7 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input 
-                                    type="text" 
+                                    type="time" 
                                     class="form-control textbox-color" 
                                     id="Horafin"
                                     name="Horafin"

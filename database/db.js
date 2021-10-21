@@ -3,10 +3,10 @@ const mysql = require("mysql");
 
 //parametros de conexion
 let conexion = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.BD_USER,
-  password: process.env.BD_PASS,
-  database: process.env.BD_DATABASE,
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'bd_melosalud',
 });
 
 conexion.connect((error) => {

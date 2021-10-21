@@ -19,7 +19,7 @@
 
 .espacioDiv
 {
-    height: 20vh;
+    height: 13vh;
 }
 
 .input-radius
@@ -38,4 +38,9 @@
     background-color: #5D58D7;
     padding: 2rem;
     border-radius: 5rem;
+}
+
+.tbl-personal
+{
+    width: 100%;
 }

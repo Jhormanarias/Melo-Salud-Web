@@ -89,7 +89,7 @@ function traerDatosTabla(nombreEspecialidad)
 // Escuchamos el click del botón e imprimimos
 let btnImprimir = document.getElementById("btnImprimir");
 btnImprimir.addEventListener("click", () => {
-  const elementoParaConvertir = document.getElementById("tablaPdf"); // Aquí puedes elegir cualquier elemento del DOM
+  //const elementoParaConvertir = document.getElementById("tablaPdf"); // Aquí puedes elegir cualquier elemento del DOM
 
 // import { jsPDF } from "jspdf";
 // const doc = new jsPDF({
@@ -120,7 +120,7 @@ html2pdf()
                 orientation: 'portrait' // landscape o portrait
             }
         }) 
-        .from(elementoParaConvertir)
+        .from(tablaVisibleBtnVisible)
         .save()
         .catch(err => console.log(err));
 });

@@ -1,5 +1,5 @@
 //url
-const urlAdd = 'http://localhost:4000/add';
+const urlAdd = 'http://localhost:3000/add';
 
 //Inputs que necesito para insertar un personal
 let numeroCedula = document.getElementById('numeroCedula');

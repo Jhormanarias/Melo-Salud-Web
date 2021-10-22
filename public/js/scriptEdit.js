@@ -47,12 +47,12 @@ formAleatorio.addEventListener('submit', (e) => {
     console.log(fecha2.diff(fecha1, 'days'));
 
     //Si es mayor a 5 días -- No deja insertar
-    if(fecha2.diff(fecha1, 'days')>5)
+    if(fecha2.diff(fecha1, 'days')>30)
     {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Sólo pueden ser 5 días!'
+            text: 'Máximo 1 mes!'
           })
     }
     else  //De lo contrario que haga la consulta y a cada uno le asigne un horario aleatoriamente

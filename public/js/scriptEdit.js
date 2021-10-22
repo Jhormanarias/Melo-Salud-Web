@@ -9,7 +9,7 @@ let urlRedirect = 'http://localhost:3000/'
 let btnGenAl = document.getElementById('btnGenAl');
 let FormGenAleatorio = document.getElementById('FormGenAleatorio');//Para desplegar el formulario visible-No visible
 let formAleatorio = document.getElementById('formAleatorio')
-let btnRandom = document.getElementById('btnRandom');
+let btnEspecif = document.getElementById('btnEspecif');
 
 
 //Inicializar la página con este div invisible
@@ -21,6 +21,15 @@ let fechaInicio = document.getElementById('fechaInicio');
 let fechaFin = document.getElementById('fechaFin');
 let turno = ['Turno 1 (6:00 A.M a 2:00 P.M)','Turno 2 (2:00 P.M a 10:00 P.M)','Turno 3 (10:00 P.M a 6:00 A.M)']; //Esto para poder asignarlo aleatoriamente a la BD
 
+
+//Al clickear botón Editar personal especifico
+btnEspecif.addEventListener('click', ()=>{
+    Swal.fire(
+        'Lo sentimos',
+        'Esta opción aún no está disponible',
+        'error'
+      )
+})
 
 //Que al clickear el boton generar aleatorio se despliegue un formulario o se esconda
 btnGenAl.addEventListener('click', ()=>{

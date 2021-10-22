@@ -47,12 +47,14 @@ formAleatorio.addEventListener("submit", (e) => {
   var fecha2 = moment(fechaFin.value);
   //Verifico el número de resultado en consola
   console.log(fecha2.diff(fecha1, "days"));
+  //Validar fechas
   if (fechaInicio.value.length == 0 || fechaFin.value.length == 0) {
     Swal.fire({
       icon: "error",
       title: "Oops...",
       text: "Ingrese una fecha!",
     });
+    //Valido que la fecha fin no sea anterior a la fecha de inicio
   } else if (fecha2.diff(fecha1, "days") < 0) {
     Swal.fire({
       icon: "error",
@@ -79,6 +81,7 @@ formAleatorio.addEventListener("submit", (e) => {
         fecha_fin: fechaFin.value,
         turno: turno[result],
       };
+      //Fetch para hacer consulta actualizar
       fetch(url + id, {
         method: "PUT",
         body: JSON.stringify(data),

@@ -15,7 +15,20 @@ let formInsertar = document.getElementById('formInsertar');
 
 //Guardar datos De la página agregar personal
 formInsertar.addEventListener('submit', (e)=>{
-    e.preventDefault();
+  e.preventDefault();
+  //Validar los campos
+  //Condiciones para validar
+  if(numeroCedula.value.lenght==0 || nombre.value.lenght==0 || apellidos.value.lenght==0 || especialidad.value=='Selecciona una especialidad:' || fechaInicio.value.length == 0 || fechaFin.value.length == 0 || turno.value=='Selecciona una turno:')
+  {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Llene todos los campos correctamente",
+    });
+  }
+  //COMIENZO ELSE
+  else
+  {
     fetch(urlAdd, {
         method: 'POST',
         headers: {
@@ -43,5 +56,7 @@ formInsertar.addEventListener('submit', (e)=>{
         }
       )
     }
+  }
+  //FIN ELSE  
 );
 

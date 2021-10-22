@@ -100,7 +100,7 @@ ExportXLSX();
 //Exporta la tabla a un excel XSLX usando la ayuda de la libreria export
 function ExportXLSX(){
   $('#tablaDatos').tableExport({
-    fileName: 'Horarios'+hoy,
+    fileName: 'Horarios '+hoy,
     type: 'xlsx'
   });
 }

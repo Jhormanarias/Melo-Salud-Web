@@ -35,7 +35,7 @@ formInsertar.addEventListener('submit', (e)=>{
       .then(response =>
         {
             Swal.fire(
-                'Good job!',
+                'Felicidades!',
                 'Usuario '+nombre.value+' Guardado!',
                 'success'
               );

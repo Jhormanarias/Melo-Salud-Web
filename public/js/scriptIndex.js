@@ -53,7 +53,7 @@ btnHorarios.addEventListener('click', ()=>{
 })
 
 //Función para traer los datos de la tabla según el personal solicitado 
-function traerDatosTabla(nombreEspecialidad) 
+function traerDatosTabla() 
 {
   fetch(url + especialidadSolicitada.value)
       .then(response => response.json())
@@ -73,16 +73,18 @@ function traerDatosTabla(nombreEspecialidad)
         </thead>`;
         tablaDatos.style.display = "block";
         for (let i = 0; i < datos.length; i++) {
-          tablaDatos.innerHTML += ` 
-        <tr>
-          <td>${datos[i].cedula}</td>
-          <td>${datos[i].nombre}</td>
-          <td>${datos[i].apellidos}</td>
-          <td>${datos[i].especialidad}</td>
-          <td>${datos[i].fecha_inicio}</td> 
-          <td>${datos[i].fecha_fin}</td> 
-          <td>${datos[i].turno}</td>     
-        </tr>
+          tablaDatos.innerHTML += `
+          <tbody> 
+            <tr>
+              <td>${datos[i].cedula}</td>
+              <td>${datos[i].nombre}</td>
+              <td>${datos[i].apellidos}</td>
+              <td>${datos[i].especialidad}</td>
+              <td>${datos[i].fecha_inicio}</td> 
+              <td>${datos[i].fecha_fin}</td> 
+              <td>${datos[i].turno}</td>     
+            </tr>
+          </tbody>
         `
         }
       }

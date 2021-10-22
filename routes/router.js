@@ -76,4 +76,23 @@ router.post('/add',authController.isAuthenticated,(req,res)=>{
     })
 });
 
+//Actualizar datos
+router.put('/api/EditPersonal/:id', function(req,res){
+    //Variables para mandar datos
+    let id = req.params.id;
+    let fecha_inicio = req.body.fecha_inicio;
+    let fecha_fin = req.body.fecha_fin;
+    let turno = req.body.turno;
+    //Consulta
+    conexion.query("UPDATE datos_personal SET fecha_inicio = ?, fecha_fin = ?, turno = ? where id = ?",[fecha_inicio,fecha_fin,turno,id],
+    function(error,datos){
+        if (error) {
+            throw error;
+        }
+        else{
+            res.send(datos);
+        }
+    })
+})
+
 module.exports = router

@@ -27,6 +27,7 @@ btnHorarios.addEventListener('click', ()=>{
   {
     tablaVisibleBtnVisible.style.display = "block";
     tablaPdf.style.display = "block";
+    tablaDatos.style.width= "100%";
     traerDatosTabla();
   }
   if(especialidadSolicitada.value=='Psiquiatría')
@@ -71,7 +72,6 @@ function traerDatosTabla()
             <th scope="col">Turno</th>
           </tr>
         </thead>`;
-        tablaDatos.style.display = "block";
         for (let i = 0; i < datos.length; i++) {
           tablaDatos.innerHTML += `
           <tbody> 
@@ -84,8 +84,7 @@ function traerDatosTabla()
               <td>${datos[i].fecha_fin}</td> 
               <td>${datos[i].turno}</td>     
             </tr>
-          </tbody>
-        `
+          </tbody>`
         }
       }
       );

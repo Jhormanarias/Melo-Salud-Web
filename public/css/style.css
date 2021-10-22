@@ -48,6 +48,7 @@
 .tbl-personal
 {
     width: 100%;
+    align-items: center;
 }
 
 .titulo-tabla

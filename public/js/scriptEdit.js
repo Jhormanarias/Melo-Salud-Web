@@ -34,7 +34,7 @@ btnGenAl.addEventListener('click', ()=>{
 });
 
 
-//Al clickear el botón de generar
+//Al clickear el botón de generar y subir a la BD un turno aleatorio
 formAleatorio.addEventListener('submit', (e) => {
     e.preventDefault();
     result = getRandomIndTurno(0, turno.length-1);
@@ -55,7 +55,7 @@ formAleatorio.addEventListener('submit', (e) => {
     .catch(error => console.log(error))
     .then(datos => {
         Swal.fire(
-            'Good job!',
+            'Felicidades!',
             'Horarios Generados!',
             'success'
         );

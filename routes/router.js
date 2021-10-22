@@ -77,7 +77,7 @@ router.post('/add',authController.isAuthenticated,(req,res)=>{
 });
 
 //Actualizar datos
-router.put('/api/EditPersonal/:id', function(req,res){
+router.put('/api/EditPersonal/:id',authController.isAuthenticated, function(req,res){
     //Variables para mandar datos
     let id = req.params.id;
     let fecha_inicio = req.body.fecha_inicio;

@@ -1,6 +1,9 @@
 //url 
 const url = 'http://localhost:3000/';
 
+//Fecha para el nombre del documento
+var hoy = new Date();
+
 //Boton Horarios en el home
 let btnHorarios = document.getElementById('btnHorarios');
 
@@ -90,112 +93,14 @@ function traerDatosTabla(nombreEspecialidad)
 // Escuchamos el click del botón e imprimimos
 let btnImprimir = document.getElementById("btnImprimir");
 btnImprimir.addEventListener("click", () => {
-//const elementoParaConvertir = document.getElementById("tablaPdf"); // Aquí puedes elegir cualquier elemento del DOM
-
-pdf();
-
-
-// html2pdf()
-//         .set({
-//             pagebreak: ['css', 'legacy'],
-//             margin: 1.5,
-//             filename: 'Horarios.pdf',
-//             image: {
-//                 type: 'string',
-//                 quality: 0.98
-//             },
-//             html2canvas: {
-//                 scale: 3, // A mayor escala, mejores gráficos, pero más peso
-//                 letterRendering: true,
-//             },
-//             jsPDF: {
-//                 unit: "in",
-//                 format: "a3",
-//                 orientation: 'portrait' // landscape o portrait
-//             }
-//         }) 
-//         .from(tablaPdf)
-//         .save()
-//         .catch(err => console.log(err));
+ExportXLSX();
 });
 
-//Función para descargar pdf (no funcionó)
-function downloadPdf() {
-  let pdf = new jsPDF('l', 'pt', 'a3');
-  pdf.html(tablaPdf, {
-      callback: function (pdf) {
-          pdf.save('Horarios.pdf');
-      }
+
+//Exporta la tabla a un excel XSLX usando la ayuda de la libreria export
+function ExportXLSX(){
+  $('#tablaDatos').tableExport({
+    fileName: 'Horarios'+hoy,
+    type: 'xlsx'
   });
-};
-
-//No funcionó
-function pruebaDivPdf() {
-  var pdf = new jsPDF('p', 'pt', 'letter');
-  source = tablaPdf;
-
-  specialElementHandlers = {
-      source: function (element, renderer) {
-          return true
-      }
-  };
-  margins = {
-      top: 40,
-      bottom: 40,
-      left: 40,
-      width: 522
-  };
-
-  pdf.fromHTML(
-    source, 
-    margins.left, // x coord 
-    margins.top, { // y coord
-          'width': margins.width, 
-          'elementHandlers': specialElementHandlers
-      },
-
-      function (dispose) {
-          pdf.save('Prueba.pdf');
-      }, margins
-  );
-}
-
-//No funcionó
-function ConvertPdf() 
-{
-  const doc = new jsPDF({
-  orientation: "landscape",
-  unit: "in",
-  format: [4, 2]
-});
-source = tablaPdf;
-specialElementHandlers = {
-  source: function (element, renderer) {
-      return true
-  }
-};
-doc.setFontSize(40)
-doc.text(35, 25, 'Paranyan loves jsPDF')
-doc.fromHTML(
-  source, 
-  15, 
-  40,{
-  'width': 180,'elementHandlers': specialElementHandlers
-  }
-)
-doc.save("a4.pdf");
-}
-
-//La que más funcionó pero se ve fea
-function pdf() {
-const pdf = new jsPDF('p','pt','a4');
-let pdfConf = {
-pagesplit: true, //Adding page breaks manually using pdf.addPage();
-background: '#fff' //White Background.
-};
-pdf.fromHTML(tablaPdf,20,20,{
-width:700
-})
-
-pdf.save("Horarios.pdf");
 }

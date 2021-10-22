@@ -16,6 +16,16 @@ let formInsertar = document.getElementById('formInsertar');
 //Guardar datos De la página agregar personal
 formInsertar.addEventListener('submit', (e)=>{
   e.preventDefault();
+
+  //Contar los días y no ser mayor a 5 porque hay descanso
+  //Lo hice con un CDN llamado moment
+  var fecha1 = moment(fechaInicio.value);
+  var fecha2 = moment(fechaFin.value);
+  //Verifico el número de resultado en consola
+  console.log(fecha2.diff(fecha1, "days"));
+
+
+
   //Validar los campos
   //Condiciones para validar
   if(numeroCedula.value.lenght==0 || nombre.value.lenght==0 || apellidos.value.lenght==0 || especialidad.value=='Selecciona una especialidad:' || fechaInicio.value.length == 0 || fechaFin.value.length == 0 || turno.value=='Selecciona una turno:')
@@ -24,6 +34,15 @@ formInsertar.addEventListener('submit', (e)=>{
       icon: "error",
       title: "Oops...",
       text: "Llene todos los campos correctamente",
+    });
+  }
+  //Valido que la fecha fin no sea anterior a la fecha de inicio
+  else if (fecha2.diff(fecha1, "days") < 0) 
+  {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "La fecha fin no puede ser menor a la fecha de inicio!",
     });
   }
   //COMIENZO ELSE
